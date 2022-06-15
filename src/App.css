@@ -238,6 +238,18 @@ box-shadow:  4px 4px 8px #bcbcbc,
     animation: sway 1000ms infinite;
     z-index: 0;
   }
+
+  .App-logo {
+    height: 8vmin;
+    pointer-events: none;
+    animation: sway 1250ms infinite ease-in-out;
+  }
+
+  .App-logo-still {
+    height: 8vmin;
+    pointer-events: none;
+  }
+  
 }
 
 .connect img {
