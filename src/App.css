@@ -256,6 +256,10 @@ box-shadow:  4px 4px 8px #bcbcbc,
     top: 20%;
     z-index: 20;
   }
+
+  .notif {
+    left:35%;
+  }
   
 }
 
