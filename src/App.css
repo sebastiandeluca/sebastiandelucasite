@@ -169,6 +169,7 @@ box-shadow:  4px 4px 8px #bcbcbc,
   background-color: #f5f5f5;
   animation: swipeUp 500ms;
   animation-fill-mode: forwards;
+  text-decoration: none;
 }
 
 .Button:hover {
@@ -219,6 +220,21 @@ box-shadow:  4px 4px 8px #bcbcbc,
   padding: 1em;  
 }
 
+.Side-image-proj {
+  max-height: 30vh;
+  object-fit: cover;
+  margin-left: 5em;
+  border-radius: 1em;
+}
+
+.Side-image-proj-2 {
+  max-height: 30vh;
+  object-fit: cover;
+  margin-left: 8em;
+  margin-right: 4em;
+  border-radius: 1em;
+}
+
 @media only screen and (max-width: 600px) {
   .text-block {
     padding: 0 1.25em 0 1.25em;
@@ -237,7 +253,21 @@ box-shadow:  4px 4px 8px #bcbcbc,
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     margin-right: 5em;
     border-radius: 1em;
-    animation: sway 1000ms infinite;
+  }
+
+  .Side-image-proj {
+    max-height: 30vh;
+    object-fit: cover;
+    margin-right: 5em;
+    border-radius: 1em;
+  }
+
+  .Side-image-proj-2 {
+    max-height: 30vh;
+    object-fit: cover;
+    margin-left: 5em;
+    margin-right: 5em;
+    border-radius: 1em;
   }
 
   .App-logo {

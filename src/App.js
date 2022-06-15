@@ -6,6 +6,11 @@ import github from './img/github.png';
 import linkedin from './img/linkedin.png';
 import email from './img/email.png';
 import seb from './img/seb.jpg';
+import appetment_logo from './img/appetment.png';
+import prism_logo from './img/Prism.png';
+import comm_logo from './img/comm.png';
+import super_logo from './img/supercalculator.png';
+import pdf from './Components/SebastianDeluca.pdf';
 
 const openInNewTab = (url) => {
   const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -20,7 +25,7 @@ const Navbar = (props) => {
     <div className="Nav">
       <button onClick={onClickHandler} value="About"className="Button">About</button>
       <button onClick={onClickHandler} value="Projects"className="Button">Projects</button>
-      <button onClick={onClickHandler} className="Button">Resume</button>
+      <a href={pdf} className="Button" target="_blank" rel="noreferrer">Resume</a>
     </div>
   )
 }
@@ -45,12 +50,50 @@ const Projects = (props) => {
     <div className="Projects">
       <img src={logo} className="App-logo-still" alt="logo" />
       <Navbar changePage={props.changePage}></Navbar>
-      <div className='text-block'>
-          <h2 className='text-head'>Coming Soon.</h2>
+      <div className="Personal-info">
+        <img className="Side-image-proj" src={appetment_logo} alt=""></img>
+        <div className='text-block'>
+          <h2 className='text-head'>Appetment</h2>
           <p className='description'>
-            This part of the site hasn't been designed yet. While you wait, go check out <a href="https://sebastiandeluca.github.io/">sebastiandeluca.github.io!</a>
+            Appetment was a project I created as a submission for a final project for Harvard's CS50w course. The premise is that it is a service that allows you create profiles for your pets, and then create appointments for them, after which said appointment, along with your pet's info, will be forwarded to all nearby approved vet clinics. It utilizes JavaScript, Python, Django, and SQL. It is a project that I am passionate about and intend to finish, and am almost at that stage.
+            To see more about Appetment, check out its <a href="https://github.com/sebastiandeluca/Appetment" rel="">repository.</a>
           </p>
         </div>
+      </div>
+      <div className="Personal-info">
+        <img className="Side-image-proj-2" src={prism_logo} alt=""></img>
+        <div className='text-block'>
+          <h2 className='text-head'>Prism</h2>
+          <p className='description'>
+          Prism was a video game created in Python for the Grade 12 software development unit of my Intro to Computer Science class. My contributions to the project are the code for 3 of the 4 games, the code for the lobby, and creation of all of the artwork, as well as the concept and story of the game.
+            To see more about Prism, check out its <a href="https://github.com/sebastiandeluca/Prism" rel="">repository.</a>
+          </p>
+        </div>
+      </div>
+      <div className="Personal-info">
+        <img className="Side-image-proj-2" src={comm_logo} alt=""></img>
+        <div className='text-block'>
+          <h2 className='text-head'>Commerce</h2>
+          <p className='description'>
+          Commerce was yet another CS50w course assignment. It is an e-commerce site where you can participate in an auction for various differents types of items, a live comment section, and also has admin functionality, among other things. It utilizes JavaScript, Python, SQL, and Django.
+          </p>
+        </div>
+      </div>
+      <div className="Personal-info">
+        <img className="Side-image-proj-2" src={super_logo} alt=""></img>
+        <div className='text-block'>
+          <h2 className='text-head'>Supercalculator</h2>
+          <p className='description'>
+          The Supercalculator was a personal project of mine made in Python. It is a calculator that is not only capable of the basic arithmetic operations, but can also perform the Quadratic Formula, Invert a 2x2 Matrix, calculate determinants, find derivatives, and more.
+          To see more about Supercalculator, check out its <a href="https://github.com/sebastiandeluca/supercalculator" rel="">repository.</a>
+          </p>
+        </div>
+      </div>
+      <br></br><br></br>
+      <div className='text-block' style={{textAlign:"center",padding:"5em"}}>
+        <h2 className='text-head'>More Projects on my Github (on the right)</h2>
+      </div>
+        
     </div>
   )
 }
