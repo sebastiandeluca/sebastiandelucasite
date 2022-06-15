@@ -251,6 +251,11 @@ box-shadow:  4px 4px 8px #bcbcbc,
     padding-top: 2vmin;
     pointer-events: none;
   }
+
+  .connect {
+    top: 20%;
+    z-index: 20;
+  }
   
 }
 
