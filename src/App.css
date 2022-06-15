@@ -293,6 +293,11 @@ box-shadow:  4px 4px 8px #bcbcbc,
   
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .connect img {
   padding-top: 0.33vh;
   padding-bottom: 0.33vh;

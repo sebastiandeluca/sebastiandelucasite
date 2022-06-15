@@ -25,7 +25,7 @@ const Navbar = (props) => {
     <div className="Nav">
       <button onClick={onClickHandler} value="About"className="Button">About</button>
       <button onClick={onClickHandler} value="Projects"className="Button">Projects</button>
-      <a href={pdf} className="Button" target="_blank" rel="noreferrer">Resume</a>
+      <button className="Button"><a href={pdf} target="_blank" rel="noreferrer">Resume</a></button>
     </div>
   )
 }
