@@ -51,7 +51,7 @@ const Projects = (props) => {
       <img src={logo} className="App-logo-still" alt="logo" />
       <Navbar changePage={props.changePage}></Navbar>
       <div className="Personal-info">
-        <img className="Side-image-proj" src={appetment_logo} alt=""></img>
+        <img className="Side-image-proj-2" src={appetment_logo} alt=""></img>
         <div className='text-block'>
           <h2 className='text-head'>Appetment</h2>
           <p className='description'>
