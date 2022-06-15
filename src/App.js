@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CSSTransition,TransitionGroup } from 'react-transition-group';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
 import github from './img/github.png';
 import linkedin from './img/linkedin.png';

@@ -236,6 +236,7 @@ box-shadow:  4px 4px 8px #bcbcbc,
     margin-right: 5em;
     border-radius: 1em;
     animation: sway 1000ms infinite;
+    z-index: 0;
   }
 }
 
