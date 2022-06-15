@@ -186,13 +186,17 @@ box-shadow:  4px 4px 8px #bcbcbc,
   display: flex;
   flex-direction: column;
   max-width: 2em;
-  max-height: 2em;
   padding: 1vmin;
   border: none;
   border-radius: 1em;
   background: linear-gradient(145deg, #ffffff, #d8d8d8);
   box-shadow:  5px 5px 5px #cccccc,
               -5px -5px 5px #ffffff;
+}
+
+.connect-image {
+  max-width: 2em;
+  max-height: 2em;
 }
 
 .notif {

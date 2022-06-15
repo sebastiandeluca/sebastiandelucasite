@@ -137,9 +137,9 @@ function App() {
         Copied to clipboard.
       </div>
       <div className="connect">
-        <img src={github} onClick={() => {openInNewTab("https://github.com/sebastiandeluca")}}alt=""></img>
-        <img src={linkedin} onClick={() => {openInNewTab("https://www.linkedin.com/in/sebastian-deluca/")}} alt=""></img>
-        <img src={email} onClick={() => {navigator.clipboard.writeText('delucaseb02@gmail.com');runPopup();}}alt=""></img>
+        <img className="connect-image" src={github} onClick={() => {openInNewTab("https://github.com/sebastiandeluca")}}alt=""></img>
+        <img className="connect-image" src={linkedin} onClick={() => {openInNewTab("https://www.linkedin.com/in/sebastian-deluca/")}} alt=""></img>
+        <img className="connect-image" src={email} onClick={() => {navigator.clipboard.writeText('delucaseb02@gmail.com');runPopup();}}alt=""></img>
       </div>
       
       <TransitionGroup className="Top">
