@@ -157,6 +157,7 @@ box-shadow:  4px 4px 8px #bcbcbc,
                -2px -2px 8px #ff4d3e;}
 
 .Button {
+  color: black;
   opacity: 0;
   transition: all 100ms ease-out;
   border: none;
@@ -185,6 +186,7 @@ box-shadow:  4px 4px 8px #bcbcbc,
   display: flex;
   flex-direction: column;
   max-width: 2em;
+  max-height: 2em;
   padding: 1vmin;
   border: none;
   border-radius: 1em;
@@ -203,7 +205,7 @@ box-shadow:  4px 4px 8px #bcbcbc,
   font-family: "Metropolis";
   text-align: center;
   z-index: 3;
-  max-width: 5em;
+  min-width: 5em;
   background: rgba(255, 255, 255, 0);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -214,10 +216,6 @@ box-shadow:  4px 4px 8px #bcbcbc,
 }
 
 @media only screen and (max-width: 600px) {
-  .connect {
-    display: none;
-  }
-
   .text-block {
     padding: 0 1.25em 0 1.25em;
     text-align: left;
@@ -246,6 +244,7 @@ box-shadow:  4px 4px 8px #bcbcbc,
 
   .App-logo-still {
     height: 8vmin;
+    padding-top: 2vmin;
     pointer-events: none;
   }
   
