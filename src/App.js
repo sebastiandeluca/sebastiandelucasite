@@ -100,6 +100,11 @@ const Projects = (props) => {
 
 
 const About = (props) => {
+  let age = 1;
+  let dob = new Date("07/07/2002");
+  let month_diff = Date.now() - dob.getTime();
+  let year = new Date(month_diff);
+  age = Math.abs(year.getUTCFullYear() - 1970);
     return(
      
       <div className="About">
@@ -110,13 +115,17 @@ const About = (props) => {
           <div className='text-block'>
             <h2 className='text-head'>The Important Stuff</h2>
             <p className='description'>
-              I’m a 19 year old aspiring fullstack developer from Queen’s University. I have a very strong passion for both front and backend development, and my skills come from both experience in school and learning in my spare time.
+              I’m a {age} year old aspiring fullstack developer from Queen’s University. I have a very strong passion for both front and backend development, and my skills come from both experience in school and learning in my spare time.
               <br></br><br></br>Some of my most important skills in the workplace are my good communication skills, how easily I can adapt, how quickly I learn, my work ethic, and how well I work both alone and in a team.
             </p>
           </div>
         </div>
         <div className='text-block'>
           <h2 className='text-head'>Work Experience</h2>
+          <p className='description'>
+            <em>Quality Assurance Technician (2022)</em> - <strong>Sentry Health Inc.</strong><br></br>
+            Ensured that newly developed features were implemented correctly and also developed tools for various purposes.
+          </p>
           <p className='description'>
             <em>Lead Web Designer (2022)</em> - <strong>DCL Group of Companies</strong><br></br>
             Completely redesigned both the portfolio site and a construction project’s site, consistently implementing client requests exactly as requested with efficiency.
