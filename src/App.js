@@ -132,6 +132,13 @@ const About = (props) => {
           </p>
         </div>
         <div className='text-block'>
+          <h2 className='text-head'>Other Experience</h2>
+          <p className='description'>
+            <em>Design Consulting Team Member (Current)</em> - <strong>QMIND</strong><br></br>
+            As a consultant, I advise on and contribute to the design aspects of the myriad projects currently in development at QMIND.
+          </p>
+        </div>
+        <div className='text-block'>
           <h2 className='text-head'>Certifications</h2>
           <p className='description'>
             - Web Design in Python & JavaScript (Acq. 2021) - <strong>HarvardX</strong><br></br>
@@ -156,14 +163,15 @@ const About = (props) => {
           <div className='Skill-container'>
             <div className="Skill dj">85%</div>
           </div>
+          <p>Flask</p>
+          <div className='Skill-container'>
+            <div className="Skill flask">85%</div>
+          </div>
           <p>SQL</p>
           <div className='Skill-container'>
             <div className="Skill sql">70%</div>
           </div>
-          <p>C</p>
-          <div className='Skill-container'>
-            <div className="Skill c">60%</div>
-          </div>
+          
         </div>
         <div className='text-block'>
           <h2 className='text-head'>Contact Me</h2>
