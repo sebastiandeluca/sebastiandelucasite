@@ -3,10 +3,6 @@
   color: black;
 }
 
-:root:disabled:hover {
-  color: white;
-}
-
 @font-face {
   font-family: "Metropolis";
   src: url("font/Metropolis-Regular.otf");
@@ -330,10 +326,6 @@ box-shadow:  4px 4px 8px #bcbcbc,
 a {
   text-decoration: none;
   color: black;
-}
-
-a:disabled:hover {
-  color: white;
 }
 
 .connect img {
