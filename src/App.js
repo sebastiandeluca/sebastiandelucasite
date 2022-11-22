@@ -192,18 +192,20 @@ const Resumes = (props) => {
     <div className="Resumes">
       <img src={logo} className="App-logo-still" alt="logo" />
       <Navbar changePage={props.changePage}></Navbar>
-      <div className='container-row'>
-      <div className='text-block'>
+       <div className='text-block'>
         <h2 className='text-head'>Resumes</h2>
         <p className='description'>
         I have interest in a few areas of our industry, and so I have specific
         resumes curated to better suit positions for each of those areas. Check
         out the one that's relevant to you. (Or, check out all of them. You do you!)
         </p>
+      </div>
+      <div className='container-row'>
+     
         <div className='container-row'>
           <div className='container-col' id="resume">
             <h2>Frontend Development</h2>
-            <p className='description-tiny'>
+            <p className='description'>
               A resume tailored to describe my frontend development
               abilities.
             </p>
@@ -211,23 +213,23 @@ const Resumes = (props) => {
           </div>
           <div className='container-col' id="resume">
             <h2>Software Development</h2>
-            <p className='description-tiny'>
+            <p className='description'>
               A resume that's more to show more of the range
               of my abilities.
             </p>
             <button className="Button"><a href={pdf} target="_blank" rel="noreferrer">Download</a></button>
           </div>
         </div>
-          <div className="container-row">
-            <p className='description-tiny'>
+          
+        </div>
+        <div className="container-row">
+            <p className='text-block'>
               Don't see anything that interests you? Check out my 
               LinkedIn and my Github for more of my technical 
               experience and past projects respectively!
             </p>
           </div>
-        </div>
       </div>
-    </div>
       
   )
 }
