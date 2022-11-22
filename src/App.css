@@ -29,12 +29,6 @@
   animation: swipeLeft 500ms ease-in-out;
 }
 
-.description-tiny {
-  font-size: calc(8px + 2vmin);
-  animation: swipeLeft 500ms ease-in-out;
-  margin-top: calc(-2vh + 1vmin);
-}
-
 .text-block {
   padding: 0 5em 2vh 5em;
   text-align: left;
@@ -271,9 +265,16 @@ box-shadow:  4px 4px 8px #bcbcbc,
 }
 
 @media only screen and (max-width: 600px) {
+
   .text-block {
     padding: 0 1.25em 0 1.25em;
     text-align: left;
+  }
+  
+  .container-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .Personal-info {
