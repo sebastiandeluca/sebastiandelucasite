@@ -11,6 +11,7 @@ import prism_logo from './img/Prism.png';
 import comm_logo from './img/comm.png';
 import super_logo from './img/supercalculator.png';
 import pdf from './Components/SebastianDeluca.pdf';
+import frontendpdf from './Components/Frontend Development Resume.pdf'
 
 const openInNewTab = (url) => {
   const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -25,7 +26,7 @@ const Navbar = (props) => {
     <div className="Nav">
       <button onClick={onClickHandler} value="About"className="Button">About</button>
       <button onClick={onClickHandler} value="Projects"className="Button">Projects</button>
-      <button className="Button"><a href={pdf} target="_blank" rel="noreferrer">Resume</a></button>
+      <button onClick={onClickHandler} value="Resumes"className="Button">Resumes</button>
     </div>
   )
 }
@@ -186,6 +187,52 @@ const About = (props) => {
 }
 
 
+const Resumes = (props) => {
+  return(
+    <div className="Resumes">
+      <img src={logo} className="App-logo-still" alt="logo" />
+      <Navbar changePage={props.changePage}></Navbar>
+      <div className='container-row'>
+      <div className='text-block'>
+        <h2 className='text-head'>Resumes</h2>
+        <p className='description'>
+        I have interest in a few areas of our industry, and so I have specific
+        resumes curated to better suit positions for each of those areas. Check
+        out the one that's relevant to you. (Or, check out all of them. You do you!)
+        </p>
+        <div className='container-row'>
+          <div className='container-col' id="resume">
+            <h2>Frontend Development</h2>
+            <p className='description-tiny'>
+              A resume tailored to describe my frontend development
+              abilities.
+            </p>
+            <button className="Button"><a href={frontendpdf} target="_blank" rel="noreferrer">Download</a></button>
+          </div>
+          <div className='container-col' id="resume">
+            <h2>Software Development</h2>
+            <p className='description-tiny'>
+              A resume that's more to show more of the range
+              of my abilities.
+            </p>
+            <button className="Button"><a href={pdf} target="_blank" rel="noreferrer">Download</a></button>
+          </div>
+        </div>
+          <div className="container-row">
+            <p className='description-tiny'>
+              Don't see anything that interests you? Check out my 
+              LinkedIn and my Github for more of my technical 
+              experience and past projects respectively!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+  )
+}
+
+
 function App() {
   const [state, setState] = useState("Splash");
   const changePage = (newState) => {
@@ -206,11 +253,16 @@ function App() {
         <CSSTransition key={state} in={state} timeout={1000} classNames="fade">
           <div>
           {/* <Navbar changePage={changePage}></Navbar> */}
+          
+            {state === "Resumes" && <Resumes changePage={changePage}></Resumes>}
+
             {state === "Splash" && <Splash changePage={changePage}></Splash>}
             
             {state === "About" && <About changePage={changePage}></About>}
 
             {state === "Projects" && <Projects changePage={changePage}></Projects>}
+
+            
           </div>
         </CSSTransition>
       </TransitionGroup>
