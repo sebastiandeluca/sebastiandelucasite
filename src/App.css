@@ -29,6 +29,12 @@
   animation: swipeLeft 500ms ease-in-out;
 }
 
+.description-tiny {
+  font-size: calc(8px + 2vmin);
+  animation: swipeLeft 500ms ease-in-out;
+  margin-top: calc(-2vh + 1vmin);
+}
+
 .text-block {
   padding: 0 5em 2vh 5em;
   text-align: left;
@@ -155,6 +161,30 @@ box-shadow:  4px 4px 8px #bcbcbc,
 .flask {width: 85%;background: linear-gradient(145deg, #ff483a, #dc3c31);
   box-shadow:  2px 2px 8px #cf392e,
                -2px -2px 8px #ff4d3e;}
+
+.container-row {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+
+
+.container-col {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+}
+
+#resume {
+  padding: 0.5em 2em 0.5em 2em;
+  width: 25em;
+}
 
 .Button {
   color: black;
