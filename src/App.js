@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CSSTransition,TransitionGroup } from 'react-transition-group';
 import logo from './logo.png';
-import './App.css';
+import './App.scss';
 import github from './img/github.png';
 import linkedin from './img/linkedin.png';
 import email from './img/email.png';
@@ -16,6 +16,16 @@ import frontendpdf from './Components/Frontend Development Resume.pdf'
 const openInNewTab = (url) => {
   const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
   if (newWindow) newWindow.opener = null
+}
+
+const showcaseSkills = (textElement) => {
+  var myskills = ['Passionate',
+                  'Self-Starter',
+                  'Detail-Oriented',
+                  'Adaptable',
+                  'Team Player',
+                  'Driven',
+                  'Optimistic']
 }
 
 const Navbar = (props) => {
@@ -33,9 +43,13 @@ const Navbar = (props) => {
 
 
 const Splash = (props) => {
+
     return (
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"></link>
+        <h1 className='name'>SEBASTIAN DELUCA</h1>
         <p className="subtitle">
           Aspiring Fullstack Web Developer
         </p>
@@ -49,7 +63,6 @@ const Splash = (props) => {
 const Projects = (props) => {
   return (
     <div className="Projects">
-      <img src={logo} className="App-logo-still" alt="logo" />
       <Navbar changePage={props.changePage}></Navbar>
       <div className="Personal-info">
         <img className="Side-image-proj-2" src={appetment_logo} alt=""></img>
@@ -241,6 +254,7 @@ function App() {
     setState(newState);
   }
   return (
+      
     <div className="App">
       <div className="notif" style={{display: "none"}}>
         Copied to clipboard.

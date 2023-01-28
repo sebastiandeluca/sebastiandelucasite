@@ -3,6 +3,8 @@
   color: black;
 }
 
+
+
 @font-face {
   font-family: "Metropolis";
   src: url("font/Metropolis-Regular.otf");
@@ -22,6 +24,38 @@
   font-size: calc(14px + 2vmin);
   font-family: "Metropolis-Bold";
   animation: swipeUp 500ms ease-in-out;
+}
+
+.name {
+  color: #cf392e;
+  animation: spawnShadow 500ms ease 1s forwards;
+  text-decoration: none;
+}
+
+h1 {
+  position: relative;
+}
+
+h1::before,
+h1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+}
+
+h1::before {
+  animation: typewriter 0.75s steps(15) forwards;
+  background-color: #f5f5f5;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
 }
 
 .description {
@@ -189,9 +223,10 @@ box-shadow:  4px 4px 8px #bcbcbc,
   color: black;
   opacity: 0;
   transition: all 100ms ease-out;
-  border: none;
+  border: 3px solid transparent;
   font-size: calc(8px + 2vmin);
-  font-family: 'Metropolis-Bold';
+  font-family: 'Unbounded';
+  font-weight: 900;
   padding: 1em;
   margin: 1em;
   border-radius: 1em;
@@ -199,14 +234,14 @@ box-shadow:  4px 4px 8px #bcbcbc,
   animation: swipeUp 500ms;
   animation-fill-mode: forwards;
   text-decoration: none;
-}
 
-.Button:hover {
-  transition: all 100ms ease-out;
-  background: linear-gradient(145deg, #ffffff, #d8d8d8);
-  box-shadow:  10px 10px 20px #cccccc,
-              -10px -10px 20px #ffffff;
+  &:hover {
+    transition: all 100ms ease-out;
+    background: linear-gradient(145deg, #ffffff, #d8d8d8);
+    border: 3px solid #cf392e;
+    filter: drop-shadow(0.1em 0.75vh black);
   }
+}
 
 .connect {
   right: 0;
@@ -344,7 +379,7 @@ a {
 }
 
 p {
-  font-family: 'Metropolis';
+  font-family: 'Unbounded';
   color: black;
 }
 
@@ -430,4 +465,14 @@ p {
   25%, 75% {
      opacity: 0;
   }
+}
+
+@keyframes spawnShadow {
+  0% {
+  }
+
+  100% {
+    filter: drop-shadow(0.1em 0.75vh black);
+  }
+  
 }
