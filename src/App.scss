@@ -22,7 +22,8 @@
 
 .text-head {
   font-size: calc(14px + 2vmin);
-  font-family: "Metropolis-Bold";
+  font-family: "Unbounded";
+  font-weight: 900;
   animation: swipeUp 500ms ease-in-out;
 }
 
@@ -30,6 +31,13 @@
   color: #cf392e;
   animation: spawnShadow 500ms ease 1s forwards;
   text-decoration: none;
+}
+
+.name-pages {
+  color: #cf392e;
+  animation: spawnShadow 500ms ease 1s forwards;
+  text-decoration: none;
+  font-size: 5em
 }
 
 h1 {
@@ -59,15 +67,21 @@ h1::before {
 }
 
 .description {
-  font-size: calc(12px + 2vmin);
+  font-size: calc(8px + 2vmin);
   animation: swipeLeft 500ms ease-in-out;
+}
+
+.description-head {
+  font-size: calc(14px + 2vmin);
+  animation: swipeLeft 500ms ease-in-out;
+
 }
 
 .text-block {
   padding: 0 5em 2vh 5em;
   text-align: left;
-  
 }
+
 
 .tsPart {
   z-index: -1;
@@ -143,57 +157,52 @@ h1::before {
 }
 
 .Side-image {
+  transition: all 500ms ease;
   max-height: 30vh;
   object-fit: cover;
+  border: 4px solid #cf392e;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   margin-left: 5em;
   border-radius: 1em;
+
+  &:hover {
+    transition: all 500ms ease;
+    filter: drop-shadow(0.25em 0.70vh black);
+  }
 }
 
-.Side-image:hover {
-  animation: sway 1000ms infinite ease-in-out;
+.skills-section,
+.skills-section-acco {
+  display: flex;
+  
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1 0 33%;
+  justify-content: space-evenly;
+  padding-bottom: 5vh;
 }
 
-.Skill-container {
-  width: 100%;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  background: linear-gradient(145deg, #ececec, #c7c7c7);
-box-shadow:  4px 4px 8px #bcbcbc,
-             -4px -4px 8px #fefefe;
-  border: none;
-  border-radius: 2em;
-  box-sizing: border-box;
+// .skills-section-acco .description{
+//   width: 35%;}
+
+.skill-container {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: center;
 }
 
-.Skill {
-  text-align: right;
-  font-family: 'Metropolis';
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  color: white;
-  border: none;
-  border-radius: 2em;
+.skill {
+  text-align: center;
 }
 
-.py { width: 100%; background: linear-gradient(145deg, #ff483a, #dc3c31);
-  box-shadow:  2px 2px 8px #cf392e,
-               -2px -2px 8px #ff4d3e;}
-.js { width: 100%; background: linear-gradient(145deg, #ff483a, #dc3c31);
-  box-shadow:  2px 2px 8px #cf392e,
-               -2px -2px 8px #ff4d3e;}
-.rt { width: 85%; background: linear-gradient(145deg, #ff483a, #dc3c31);
-  box-shadow:  2px 2px 8px #cf392e,
-               -2px -2px 8px #ff4d3e;}
-.dj {width:85%;background: linear-gradient(145deg, #ff483a, #dc3c31);
-  box-shadow:  2px 2px 8px #cf392e,
-               -2px -2px 8px #ff4d3e;}
-.sql {width: 70%;background: linear-gradient(145deg, #ff483a, #dc3c31);
-  box-shadow:  2px 2px 8px #cf392e,
-               -2px -2px 8px #ff4d3e;}
-.flask {width: 85%;background: linear-gradient(145deg, #ff483a, #dc3c31);
-  box-shadow:  2px 2px 8px #cf392e,
-               -2px -2px 8px #ff4d3e;}
+.fai {
+  display: flex;
+  align-self: center;
+  width: 2.5em;
+  height: 2.5em;
+}
+
 
 .container-row {
   display: flex;
@@ -271,7 +280,7 @@ box-shadow:  4px 4px 8px #bcbcbc,
   left: 47%;
   right: 47%;
   top: 40%;
-  font-family: "Metropolis";
+  font-family: "Unbounded";
   text-align: center;
   z-index: 3;
   min-width: 5em;
@@ -305,6 +314,13 @@ box-shadow:  4px 4px 8px #bcbcbc,
     padding: 0 1.25em 0 1.25em;
     text-align: left;
   }
+
+  .name-pages {
+    color: #cf392e;
+    animation: spawnShadow 500ms ease 1s forwards;
+    text-decoration: none;
+    font-size: 2em
+  }
   
   .container-row {
     display: flex;
@@ -319,11 +335,22 @@ box-shadow:  4px 4px 8px #bcbcbc,
   }
 
   .Side-image {
+    transition: all 500ms ease;
     max-height: 30vh;
     object-fit: cover;
+    border: 4px solid #cf392e;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     margin-right: 5em;
     border-radius: 1em;
+
+    &:hover {
+      transition: all 500ms ease;
+      filter: drop-shadow(0.1em 0.35vh black);
+    }
+  }
+
+  .skill-container {
+    width: 33%;
   }
 
   .Side-image-proj {
@@ -360,6 +387,16 @@ box-shadow:  4px 4px 8px #bcbcbc,
 
   .notif {
     left:35%;
+  }
+
+  @keyframes spawnShadow {
+    0% {
+    }
+  
+    100% {
+      filter: drop-shadow(0.1em 0.35vh black);
+    }
+    
   }
   
 }
@@ -467,12 +504,14 @@ p {
   }
 }
 
-@keyframes spawnShadow {
+
+@media screen and (min-width: 600px) {
+  @keyframes spawnShadow {
   0% {
   }
 
   100% {
-    filter: drop-shadow(0.1em 0.75vh black);
+    filter: drop-shadow(0.1em 0.72vh black);
   }
   
-}
+}}

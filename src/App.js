@@ -12,6 +12,9 @@ import comm_logo from './img/comm.png';
 import super_logo from './img/supercalculator.png';
 import pdf from './Components/SebastianDeluca.pdf';
 import frontendpdf from './Components/Frontend Development Resume.pdf'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPython, faJs, faReact, faUnity } from '@fortawesome/free-brands-svg-icons';
+import {faFlask, faDatabase} from '@fortawesome/free-solid-svg-icons';
 
 const openInNewTab = (url) => {
   const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -46,6 +49,7 @@ const Splash = (props) => {
 
     return (
       <header className="App-header">
+        <script src="https://kit.fontawesome.com/d73f57fe95.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"></link>
@@ -122,7 +126,7 @@ const About = (props) => {
     return(
      
       <div className="About">
-        <img src={logo} className="App-logo-still" alt="logo" />
+        <h1 className='name-pages'>SEBASTIAN DELUCA</h1>
         <Navbar changePage={props.changePage}></Navbar>
         <div className="Personal-info">
           <img className="Side-image" src={seb} alt=""></img>
@@ -134,59 +138,102 @@ const About = (props) => {
             </p>
           </div>
         </div>
-        <div className='text-block'>
-          <h2 className='text-head'>Work Experience</h2>
-          <p className='description'>
-            <em>Quality Assurance Technician (2022)</em> - <strong>Sentry Health Inc.</strong><br></br>
-            Ensured that newly developed features were implemented correctly and also developed tools for various purposes.
+        <div className='text-block' style={{ backgroundColor: '#07A5C3', color: 'white', padding: '2em'}}>
+          <h2 className='text-head' style={{textAlign:'center'}}>Relevant Experience</h2>
+          <p className='description-head'style={{ color: '#CFBF2D'}}><em>Design Consulting Team Member (Current)</em> <br></br><strong>QMIND</strong></p>
+          <p className='description'style={{ color: 'white'}}>
+          Leveraged tools like Python, OpenCV, and more to develop an ATM Crowd Counter AI with students from Jomo Kenyatta University of Agriculture and Technology.
           </p>
-          <p className='description'>
-            <em>Lead Web Designer (2022)</em> - <strong>DCL Group of Companies</strong><br></br>
-            Completely redesigned both the portfolio site and a construction project’s site, consistently implementing client requests exactly as requested with efficiency.
+          <p className='Personal-info' style={{ color: '#4F2134', fontWeight: '600'}}>Python, numpy, opencv,
+            Machine Learning, Slack</p>
+
+          <p className='description-head'style={{ color: '#CFBF2D'}}><em>Quality Assurance Technician (2022)</em> <br></br> <strong>Sentry Health Inc.</strong></p>
+          <p className='description'style={{ color: 'white'}}>
+          Responsible for ensuring the quality of newly developed features, 
+          and also developed tools for maintaining internal security. Operated 
+          as a member of a development team utilziing the scrum development method.
           </p>
-        </div>
-        <div className='text-block'>
-          <h2 className='text-head'>Other Experience</h2>
-          <p className='description'>
-            <em>Design Consulting Team Member (Current)</em> - <strong>QMIND</strong><br></br>
-            As a consultant, I advise on and contribute to the design aspects of the myriad projects currently in development at QMIND.
+          <p className='Personal-info' style={{ color: '#4F2134', fontWeight: '600'}}>Python, JavaScript, Postman,
+          Scrum, Quality Assurance,
+          Cypress, Docker</p>
+          <p className='description-head'style={{ color: '#CFBF2D'}}><em>Lead Web Designer (2022)</em> <br></br> <strong>DCL Group of Companies</strong></p>
+          <p className='description'style={{ color: 'white'}}>
+          Utilized important UI design concepts to completely overhaul a majority of the company's websites using WordPress.
           </p>
-        </div>
-        <div className='text-block'>
-          <h2 className='text-head'>Certifications</h2>
-          <p className='description'>
-            - Web Design in Python & JavaScript (Acq. 2021) - <strong>HarvardX</strong><br></br>
-            - Developing Cloud Applications with Node.js and React (Acq. 2022) - <strong>IBM</strong>
-          </p>
-        </div>
-        <div className='text-block'>
-          <h2 className='text-head'>Languages</h2>
-          <p>Python</p>
-          <div className='Skill-container'>
-            <div className="Skill py">100%</div>
-          </div>
-          <p>JavaScript</p>
-          <div className='Skill-container'>
-            <div className="Skill js">100%</div>
-          </div>
-          <p>React</p>
-          <div className='Skill-container'>
-            <div className="Skill rt">85%</div>
-          </div>
-          <p>Django</p>
-          <div className='Skill-container'>
-            <div className="Skill dj">85%</div>
-          </div>
-          <p>Flask</p>
-          <div className='Skill-container'>
-            <div className="Skill flask">85%</div>
-          </div>
-          <p>SQL</p>
-          <div className='Skill-container'>
-            <div className="Skill sql">70%</div>
-          </div>
+          <p className='Personal-info' style={{ color: '#4F2134', fontWeight: '600'}}>WordPress</p>
           
         </div>
+        <div className='text-body'>
+
+        <h2 className='text-head' style={{paddingTop: '5vh'}}>Languages & Tools</h2>
+        <div className='skills-section'>
+          
+          <div className='skill-container'>
+            <FontAwesomeIcon className='fai' icon={faPython} />
+          <p className='skill'>Python</p>
+          </div>
+          
+
+          <div className='skill-container'>
+            <FontAwesomeIcon className='fai' icon={faJs} />
+          <p className='skill'>JavaScript</p>
+          </div>
+
+          <div className='skill-container'>
+            <FontAwesomeIcon className='fai' icon={faReact} />
+          <p className='skill'>React</p>
+          </div>
+
+          <div className='skill-container'>
+            <FontAwesomeIcon className='fai' icon={faPython} />
+          <p className='skill'>Django</p>
+          </div>
+
+          <div className='skill-container'>
+            <FontAwesomeIcon className='fai' icon={faFlask} />
+          <p className='skill'>Flask</p>
+          </div>
+
+          <div className='skill-container'>
+            <FontAwesomeIcon className='fai' icon={faDatabase} />
+          <p className='skill'>SQL</p>
+          </div>
+        </div>
+        </div>
+        <div className='text-block'  style={{backgroundColor: '#07A5C3', color: 'white'}}>
+          <div className='skills-section-acco'>
+          <h2 className='text-head' style={{paddingTop: '5vh', textAlign:'center'}}>Accolades</h2>
+          
+          <p className='description'>
+          <p className='description-head'style={{ color: '#CFBF2D'}}><em>Web Design in Python & JavaScript (2021)</em> <br></br> <strong>HarvardX</strong></p>
+          <p className='description'style={{ color: 'white'}}>
+          Acquired the ability to leverage Django, as well as use Python and JavaScript in tandem more effectively.
+          </p>
+          <p className='description-head'style={{ color: '#CFBF2D'}}><em>Developing Cloud Applications with Node.js and React (2022)</em> <br></br> <strong>IBM</strong></p>
+          <p className='description'style={{ color: 'white'}}>
+          Introduced me to certain aspects of Cloud Development and IBM DB2, as well as Node.js and React.
+          </p>
+          <p className='description-head'style={{ color: '#CFBF2D'}}><em>Python LinkedIn Assessment</em> <br></br> <strong>LinkedIn</strong></p>
+          <p className='description'style={{ color: 'white'}}>
+          Scored in the top 30% of 4.1M users.
+          </p>
+          <p className='description-head'style={{ color: '#CFBF2D'}}><em>JavaScript LinkedIn Assessment</em> <br></br> <strong>LinkedIn</strong></p>
+          <p className='description'style={{ color: 'white'}}>
+          Scored in the top 5% of 2.5M users.
+          </p>
+          <p className='description-head'style={{ color: '#CFBF2D'}}><em>Git LinkedIn Assessment</em> <br></br> <strong>LinkedIn</strong></p>
+          <p className='description'style={{ color: 'white'}}>
+          Scored in the top 30% of 1.3M users.
+          </p>
+          <p className='description-head'style={{ color: '#CFBF2D'}}><em>OOP LinkedIn Assessment</em> <br></br> <strong>LinkedIn</strong></p>
+          <p className='description'style={{ color: 'white'}}>
+          Scored in the top 30% of 1.2M users.
+          </p>
+          
+          </p>
+          </div>
+        </div>
+
         <div className='text-block'>
           <h2 className='text-head'>Contact Me</h2>
           <p className='description'>
