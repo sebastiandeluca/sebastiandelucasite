@@ -10,11 +10,10 @@ import appetment_logo from './img/appetment.png';
 import prism_logo from './img/Prism.png';
 import comm_logo from './img/comm.png';
 import super_logo from './img/supercalculator.png';
-import pdf from './Components/SebastianDeluca.pdf';
-import frontendpdf from './Components/Frontend Development Resume.pdf'
+import frontendpdf from './Components/sebastian deluca resume.pdf'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPython, faJs, faReact, faUnity } from '@fortawesome/free-brands-svg-icons';
-import {faFlask, faDatabase} from '@fortawesome/free-solid-svg-icons';
+import { faPython, faJs, faReact} from '@fortawesome/free-brands-svg-icons';
+import {faFlask, faDatabase, faReceipt, faFile} from '@fortawesome/free-solid-svg-icons';
 
 const openInNewTab = (url) => {
   const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -35,13 +34,26 @@ const Navbar = (props) => {
   const onClickHandler = (event) => {
     props.changePage(event.target.value);
   }
-  return (
-    <div className="Nav">
-      <button onClick={onClickHandler} value="About"className="Button">About</button>
-      <button onClick={onClickHandler} value="Projects"className="Button">Projects</button>
-      <button onClick={onClickHandler} value="Resumes"className="Button">Resumes</button>
-    </div>
-  )
+  if (window.screen.width <= 600)
+      {
+        return (
+          <div className="Nav">
+            <button onClick={onClickHandler} value="About"className="Button">About</button>
+            <button onClick={onClickHandler} value="Projects"className="Button">Projects</button>
+          </div>
+        )
+      }
+  else {
+    return (
+      <div className="Nav">
+        <button onClick={onClickHandler} value="About"className="Button">About</button>
+        <button onClick={onClickHandler} value="Projects"className="Button">Projects</button>
+        
+        <button onClick={onClickHandler} value="Resumes"className="Button">Resumes</button>
+      </div>
+    )
+  }
+  
 }
 
 
@@ -250,43 +262,27 @@ const About = (props) => {
 const Resumes = (props) => {
   return(
     <div className="Resumes">
-      <img src={logo} className="App-logo-still" alt="logo" />
+      <h1 className='name-pages'>SEBASTIAN DELUCA</h1>
       <Navbar changePage={props.changePage}></Navbar>
        <div className='text-block'>
-        <h2 className='text-head'>Resumes</h2>
         <p className='description'>
-        I have interest in a few areas of our industry, and so I have specific
-        resumes curated to better suit positions for each of those areas. Check
-        out the one that's relevant to you. (Or, check out all of them. You do you!)
+        Feel free to download my resume and take a look at it!
         </p>
       </div>
-      <div className='container-row'>
+      <div className='container-row' style={{backgroundColor: '#07A5C3', color: 'white'}}>
      
-        <div className='container-row'>
           <div className='container-col' id="resume">
-            <h2>Frontend Development</h2>
-            <p className='description'>
-              A resume tailored to describe my frontend development
-              abilities.
+          <p className='description-head'style={{ color: '#CFBF2D'}}><b>My Resume</b></p>
+            <p className='description' style={{ color:'white'}}>
+              Here, you can learn about my education, my previous work, and some of my other skills.
             </p>
-            <button className="Button"><a href={frontendpdf} target="_blank" rel="noreferrer">Download</a></button>
+            <button className="Button"><a className='animateda' href={frontendpdf} target="_blank" rel="noreferrer">Download</a></button>
           </div>
-          <div className='container-col' id="resume">
-            <h2>Software Development</h2>
-            <p className='description'>
-              A resume that's more to show more of the range
-              of my abilities.
-            </p>
-            <button className="Button"><a href={pdf} target="_blank" rel="noreferrer">Download</a></button>
-          </div>
-        </div>
           
         </div>
         <div className="container-row">
             <p className='text-block'>
-              Don't see anything that interests you? Check out my 
-              LinkedIn and my Github for more of my technical 
-              experience and past projects respectively!
+              Thank you for taking the time to check out my site. I hope to hear from you!
             </p>
           </div>
       </div>
@@ -300,42 +296,83 @@ function App() {
   const changePage = (newState) => {
     setState(newState);
   }
-  return (
+  if (window.screen.width <= 600) {
+    return (
       
-    <div className="App">
-      <div className="notif" style={{display: "none"}}>
-        Copied to clipboard.
-      </div>
-      <div className="connect">
-        <img className="connect-image" src={github} onClick={() => {openInNewTab("https://github.com/sebastiandeluca")}}alt=""></img>
-        <img className="connect-image" src={linkedin} onClick={() => {openInNewTab("https://www.linkedin.com/in/sebastian-deluca/")}} alt=""></img>
-        <img className="connect-image" src={email} onClick={() => {navigator.clipboard.writeText('delucaseb02@gmail.com');runPopup();}}alt=""></img>
-      </div>
-      
-      <TransitionGroup className="Top">
-        <CSSTransition key={state} in={state} timeout={1000} classNames="fade">
-          <div>
-          {/* <Navbar changePage={changePage}></Navbar> */}
-          
-            {state === "Resumes" && <Resumes changePage={changePage}></Resumes>}
-
-            {state === "Splash" && <Splash changePage={changePage}></Splash>}
+      <div className="App">
+        <div className="notif" style={{display: "none"}}>
+          Copied to clipboard.
+        </div>
+        <div className="connect">
+          <img className="connect-image" src={github} onClick={() => {openInNewTab("https://github.com/sebastiandeluca")}}alt=""></img>
+          <img className="connect-image" src={linkedin} onClick={() => {openInNewTab("https://www.linkedin.com/in/sebastian-deluca/")}} alt=""></img>
+          <img className="connect-image" src={email} onClick={() => {navigator.clipboard.writeText('delucaseb02@gmail.com');runPopup();}}alt=""></img>
+          <FontAwesomeIcon className='fai' icon={faFile} onClick={Navbar.onClickHandler} value="Resumes"style={{maxWidth:'2em', maxHeight:'2em'}}/>
+        </div>
+        
+        <TransitionGroup className="Top">
+          <CSSTransition key={state} in={state} timeout={1000} classNames="fade">
+            <div>
+            {/* <Navbar changePage={changePage}></Navbar> */}
             
-            {state === "About" && <About changePage={changePage}></About>}
-
-            {state === "Projects" && <Projects changePage={changePage}></Projects>}
-
-            
-          </div>
-        </CSSTransition>
-      </TransitionGroup>
-      
-      
-      <div className="body">
-
+              {state === "Resumes" && <Resumes changePage={changePage}></Resumes>}
+  
+              {state === "Splash" && <Splash changePage={changePage}></Splash>}
+              
+              {state === "About" && <About changePage={changePage}></About>}
+  
+              {state === "Projects" && <Projects changePage={changePage}></Projects>}
+  
+              
+            </div>
+          </CSSTransition>
+        </TransitionGroup>
+        
+        
+        <div className="body">
+  
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      
+      <div className="App">
+        <div className="notif" style={{display: "none"}}>
+          Copied to clipboard.
+        </div>
+        <div className="connect">
+          <img className="connect-image" src={github} onClick={() => {openInNewTab("https://github.com/sebastiandeluca")}}alt=""></img>
+          <img className="connect-image" src={linkedin} onClick={() => {openInNewTab("https://www.linkedin.com/in/sebastian-deluca/")}} alt=""></img>
+          <img className="connect-image" src={email} onClick={() => {navigator.clipboard.writeText('delucaseb02@gmail.com');runPopup();}}alt=""></img>
+        </div>
+        
+        <TransitionGroup className="Top">
+          <CSSTransition key={state} in={state} timeout={1000} classNames="fade">
+            <div>
+            {/* <Navbar changePage={changePage}></Navbar> */}
+            
+              {state === "Resumes" && <Resumes changePage={changePage}></Resumes>}
+  
+              {state === "Splash" && <Splash changePage={changePage}></Splash>}
+              
+              {state === "About" && <About changePage={changePage}></About>}
+  
+              {state === "Projects" && <Projects changePage={changePage}></Projects>}
+  
+              
+            </div>
+          </CSSTransition>
+        </TransitionGroup>
+        
+        
+        <div className="body">
+  
+        </div>
+      </div>
+    );
+  }
+  
 }
 
 
@@ -353,7 +390,7 @@ function animateFadeIn(notif)
     {opacity:0},
     {opacity:1}
   ], {
-    duration: 1000
+    duration: 3000
   });
   return new Promise(function(resolve, reject) {
     setTimeout(resolve, 2500, "done");
