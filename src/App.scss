@@ -172,7 +172,8 @@ h1::before {
 }
 
 .skills-section,
-.skills-section-acco {
+.skills-section-acco,
+.projects-section {
   display: flex;
   
   flex-direction: row;
@@ -180,6 +181,10 @@ h1::before {
   flex: 1 0 33%;
   justify-content: space-evenly;
   padding-bottom: 5vh;
+}
+
+.projects-section {
+  flex: 2 1 10%;
 }
 
 .skill-container {
