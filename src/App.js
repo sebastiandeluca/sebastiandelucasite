@@ -7,13 +7,14 @@ import linkedin from './img/linkedin.png';
 import email from './img/email.png';
 import seb from './img/seb.jpg';
 import appetment_logo from './img/appetment.png';
+import qbnb from './img/QBNBLogo.jpg';
 import prism_logo from './img/Prism.png';
 import comm_logo from './img/comm.png';
 import super_logo from './img/supercalculator.png';
 import frontendpdf from './Components/sebastian deluca resume.pdf'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPython, faJs, faReact} from '@fortawesome/free-brands-svg-icons';
-import {faFlask, faDatabase, faReceipt, faFile} from '@fortawesome/free-solid-svg-icons';
+import {faFlask, faDatabase, faReceipt, faFile, faCommentDollar} from '@fortawesome/free-solid-svg-icons';
 
 const openInNewTab = (url) => {
   const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -85,16 +86,43 @@ const Projects = (props) => {
 
         <h2 className='text-head' style={{textAlign:'center'}}>My Projects</h2>
         <div className='projects-section'>
+          <div className='container-col'>
+            <div className='Project'><img src={appetment_logo}></img><br></br></div>
+            <h2>Appetment</h2>
+          </div>
           
-          <div className='skill-container'>APPETMENT</div>
-          <div className='skill-container'>SEBDELUCA.COM</div>
-          <div className='skill-container'>QBNB</div>
-          <div className='skill-container'>PRISM</div>
-          <div className='skill-container'>COMMERCE</div>
-          <div className='skill-container'>SUPERCALCULATOR</div>
+          <div className='container-col'>
+            <div className='Project'><img src={logo}></img><br></br></div>
+            <h2>sebdeluca.com</h2>
+          </div>
+
+          <div className='container-col'>
+            <div className='Project'><img src={qbnb} style={{width: '14em', height: '14em'}}></img><br></br></div>
+            <h2>QBNB</h2>
+          </div>
+
+          <div className='container-col'>
+            <div className='Project'><img src={prism_logo} style={{width: '14em', height: '14em'}}></img><br></br></div>
+            <h2>Prism</h2>
+          </div>
+
+          <div className='container-col'>
+            <div className='Project'><img src={comm_logo} style={{width: '14em', height: '14em'}}></img><br></br></div>
+            <h2>Commerce</h2>
+          </div>
+
+          <div className='container-col'>
+            <div className='Project'><img src={super_logo} style={{width: '14em', height: '14em'}}></img><br></br></div>
+            <h2>Supercalculator</h2>
+          </div>
         </div>
-      </div>
         
+      </div>
+      <div className="container-row">
+            <p className='text-block'>
+              All of these projects are on my GitHub as well.
+            </p>
+          </div>
     </div>
   )
 }
