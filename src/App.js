@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { CSSTransition,TransitionGroup } from 'react-transition-group';
-import logo from './logo.png';
 import './App.scss';
 import github from './img/github.png';
 import linkedin from './img/linkedin.png';
@@ -10,50 +9,30 @@ import appetment_logo from './img/appetment.png';
 import qbnb from './img/QBNBLogo.jpg';
 import prism_logo from './img/Prism.png';
 import comm_logo from './img/comm.png';
-import super_logo from './img/supercalculator.png';
+import ntw_logo from './img/ntw_logo.png';
 import frontendpdf from './Components/sebastian deluca resume.pdf'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPython, faJs, faReact} from '@fortawesome/free-brands-svg-icons';
-import {faFlask, faDatabase, faReceipt, faFile, faCommentDollar} from '@fortawesome/free-solid-svg-icons';
+import { faPython, faJs, faReact, faDocker} from '@fortawesome/free-brands-svg-icons';
+import {faFlask, faDatabase, faCubes} from '@fortawesome/free-solid-svg-icons';
+import TimelineItem from './Components/TimelineItem';
 
 const openInNewTab = (url) => {
   const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
   if (newWindow) newWindow.opener = null
 }
 
-const showcaseSkills = (textElement) => {
-  var myskills = ['Passionate',
-                  'Self-Starter',
-                  'Detail-Oriented',
-                  'Adaptable',
-                  'Team Player',
-                  'Driven',
-                  'Optimistic']
-}
-
 const Navbar = (props) => {
   const onClickHandler = (event) => {
     props.changePage(event.target.value);
   }
-  if (window.screen.width <= 600)
-      {
-        return (
-          <div className="Nav">
-            <button onClick={onClickHandler} value="About"className="Button">About</button>
-            <button onClick={onClickHandler} value="Projects"className="Button">Projects</button>
-          </div>
-        )
-      }
-  else {
-    return (
-      <div className="Nav">
-        <button onClick={onClickHandler} value="About"className="Button">About</button>
-        <button onClick={onClickHandler} value="Projects"className="Button">Projects</button>
-        
-        <button onClick={onClickHandler} value="Resumes"className="Button">Resume</button>
-      </div>
-    )
-  }
+  return (
+    <div className="Nav">
+      <button onClick={onClickHandler} value="About"className="Button">About</button>
+      <button onClick={onClickHandler} value="Projects"className="Button">Projects</button>
+      
+      <button onClick={onClickHandler} value="Resumes"className="Button">Resume</button>
+    </div>
+  )
   
 }
 
@@ -78,57 +57,194 @@ const Splash = (props) => {
 
 
 const Projects = (props) => {
+  window.scrollTo(0,0)
+  const url = new URL(window.location);
+  url.searchParams.set('key', 'projects');
+  window.history.pushState(null, '', url.toString());
+  const timelineData = [
+    {
+      title: {title: 'PRISM',
+      logo: prism_logo},
+      date: 'Spring 2020',
+      desc: "Prism was a video game created in Python for the Grade 12 software development unit of my Intro to Computer Science class. Prism leverages PyGame and SQL, and was one of the most technically advanced projects to come out of the class.",
+      stack: [
+        { 
+          icon: faPython,
+          name: 'Python'
+        },
+        { 
+          icon: faCubes,
+          name: 'Pygame'
+        },
+        { 
+          icon: faDatabase,
+          name: 'SQLite'
+        },
+      ],
+      category: {
+        tag: 'Game Development',
+        color: '#CFBF2D'
+      },
+      link: {
+        url: 'https://github.com/sebastiandeluca/Prism',
+        text: 'View on GitHub'
+      }
+    },
+    {
+      title: {title: 'Commerce',
+      logo: comm_logo},
+      date: 'Fall 2021',
+      desc: "Commerce was an online peer-to-peer auction website that leveraged Django, Python, JavaScript and SQL.",
+      stack: [
+        { 
+          icon: faPython,
+          name: 'Python'
+        },
+        { 
+          icon: faJs,
+          name: 'JavaScript'
+        },
+        { 
+          icon: faCubes,
+          name: 'Django'
+        },
+        { 
+          icon: faDatabase,
+          name: 'SQLite'
+        },
+      ],
+      category: {
+        tag: 'Fullstack Web Development',
+        color: '#CFBF2D'
+      },
+      link: {
+        url: 'https://github.com/me50/sebastiandeluca/tree/web50/projects/2020/x/commerce',
+        text: 'View on GitHub'
+      }
+    },
+    {
+      title: {title: 'The Network',
+      logo: ntw_logo},
+      date: 'Winter 2021',
+      desc: "The Network was a Twitter clone created as a project for Harvard University's CS50 course. It leveraged Django, JavaScript, Python, and SQLite.",
+      stack: [
+        { 
+          icon: faPython,
+          name: 'Python'
+        },
+        { 
+          icon: faJs,
+          name: 'JavaScript'
+        },
+        { 
+          icon: faCubes,
+          name: 'Django'
+        },
+        { 
+          icon: faDatabase,
+          name: 'SQLite'
+        },
+      ],
+      category: {
+        tag: 'Fullstack Web Development',
+        color: '#CFBF2D'
+      },
+      link: {
+        url: 'https://github.com/sebastiandeluca/The-Network',
+        text: 'View on GitHub'
+      }
+    },
+    {
+      title: {title: 'Appetment',
+              logo: appetment_logo},
+      date: 'Winter 2021 to Present',
+      desc: "A personal project designed to streamline the veterinary process for animals. Allows you to create personalized profiles for your pets and, using them, send out that profile to all nearby vet clinics when you need to bring your pet to the clinic. Leverages Python, JS, and Django-- and uses APIs like Twilio and DistranceMatrix AI.",
+      stack: [
+        { 
+          icon: faPython,
+          name: 'Python'
+        },
+        { 
+          icon: faJs,
+          name: 'JavaScript'
+        },
+        { 
+          icon: faCubes,
+          name: 'Django'
+        },
+        { 
+          icon: faDatabase,
+          name: 'SQLite'
+        },
+      ],
+      category: {
+        tag: 'Fullstack Web Dev.',
+        color: '#CFBF2D'
+      },
+      link: {
+        url: 'https://github.com/sebastiandeluca/Appetment',
+        text: 'View on GitHub'
+      }
+    },
+    {
+      title: {title: 'QBNB',
+      logo: qbnb},
+      date: 'Fall 2022',
+      desc: "An online marketplace meant to imitate AirBnB and VRBO that leverages Python, SQLite, MySQL, Docker, and Flask.",
+      stack: [
+        { 
+          icon: faPython,
+          name: 'Python'
+        },
+        { 
+          icon: faFlask,
+          name: 'Flask'
+        },
+        { 
+          icon: faDocker,
+          name: 'Docker'
+        },
+        { 
+          icon: faDatabase,
+          name: 'SQLite/MySQL'
+        },
+      ],
+      category: {
+        tag: 'Fullstack Web Development',
+        color: '#CFBF2D'
+      },
+      link: {
+        url: 'https://github.com/sebastiandeluca/QBNB',
+        text: 'View on GitHub'
+      }
+    },
+    
+  ]
+
   return (
-    <div className="Projects">
+  timelineData.length > 0 && (
+    <div>
       <h1 className='name-pages'>SEBASTIAN DELUCA</h1>
-      <Navbar changePage={props.changePage}></Navbar>
-      <div className='container-col' style={{backgroundColor: '#07A5C3', color: 'white'}}>
-
+        <Navbar changePage={props.changePage}></Navbar>
+        <div className='Project'>
         <h2 className='text-head' style={{textAlign:'center'}}>My Projects</h2>
-        <div className='projects-section'>
-          <div className='container-col'>
-            <div className='Project'><img src={appetment_logo}></img><br></br></div>
-            <h2>Appetment</h2>
-          </div>
-          
-          <div className='container-col'>
-            <div className='Project'><img src={logo}></img><br></br></div>
-            <h2>sebdeluca.com</h2>
-          </div>
-
-          <div className='container-col'>
-            <div className='Project'><img src={qbnb} style={{width: '14em', height: '14em'}}></img><br></br></div>
-            <h2>QBNB</h2>
-          </div>
-
-          <div className='container-col'>
-            <div className='Project'><img src={prism_logo} style={{width: '14em', height: '14em'}}></img><br></br></div>
-            <h2>Prism</h2>
-          </div>
-
-          <div className='container-col'>
-            <div className='Project'><img src={comm_logo} style={{width: '14em', height: '14em'}}></img><br></br></div>
-            <h2>Commerce</h2>
-          </div>
-
-          <div className='container-col'>
-            <div className='Project'><img src={super_logo} style={{width: '14em', height: '14em'}}></img><br></br></div>
-            <h2>Supercalculator</h2>
-          </div>
         </div>
-        
+        <div className='Projects'>
+      {timelineData.map((data, idx) => (
+        <TimelineItem data={data} key={idx} />
+      ))}
+      <div style={{backgroundColor: "#07A5C3", zIndex: 2, padding: '2em', color: 'white'}}>... and much more to come!</div>
       </div>
-      <div className="container-row">
-            <p className='text-block'>
-              All of these projects are on my GitHub as well.
-            </p>
-          </div>
+      
     </div>
-  )
+  ))
 }
 
-
 const About = (props) => {
+  window.scrollTo(0,0)
+  const url = new URL(window.location);
+  url.searchParams.set('key', 'about');
+  window.history.pushState(null, '', url.toString());
   let age = 1;
   let dob = new Date("07/07/2002");
   let month_diff = Date.now() - dob.getTime();
@@ -259,6 +375,10 @@ const About = (props) => {
 
 
 const Resumes = (props) => {
+  window.scrollTo(0,0)
+  const url = new URL(window.location);
+  url.searchParams.set('key', 'resume');
+  window.history.pushState(null, '', url.toString());
   return(
     <div className="Resumes">
       <h1 className='name-pages'>SEBASTIAN DELUCA</h1>
@@ -295,45 +415,6 @@ function App() {
   const changePage = (newState) => {
     setState(newState);
   }
-  if (window.screen.width <= 600) {
-    return (
-      
-      <div className="App">
-        <div className="notif" style={{display: "none"}}>
-          Copied to clipboard.
-        </div>
-        <div className="connect">
-          <img className="connect-image" src={github} onClick={() => {openInNewTab("https://github.com/sebastiandeluca")}}alt=""></img>
-          <img className="connect-image" src={linkedin} onClick={() => {openInNewTab("https://www.linkedin.com/in/sebastian-deluca/")}} alt=""></img>
-          <img className="connect-image" src={email} onClick={() => {navigator.clipboard.writeText('delucaseb02@gmail.com');runPopup();}}alt=""></img>
-          <FontAwesomeIcon className='fai' icon={faFile} onClick={Navbar.onClickHandler} value="Resumes"style={{maxWidth:'2em', maxHeight:'2em'}}/>
-        </div>
-        
-        <TransitionGroup className="Top">
-          <CSSTransition key={state} in={state} timeout={1000} classNames="fade">
-            <div>
-            {/* <Navbar changePage={changePage}></Navbar> */}
-            
-              {state === "Resumes" && <Resumes changePage={changePage}></Resumes>}
-  
-              {state === "Splash" && <Splash changePage={changePage}></Splash>}
-              
-              {state === "About" && <About changePage={changePage}></About>}
-  
-              {state === "Projects" && <Projects changePage={changePage}></Projects>}
-  
-              
-            </div>
-          </CSSTransition>
-        </TransitionGroup>
-        
-        
-        <div className="body">
-  
-        </div>
-      </div>
-    );
-  } else {
     return (
       
       <div className="App">
@@ -370,7 +451,6 @@ function App() {
         </div>
       </div>
     );
-  }
   
 }
 
