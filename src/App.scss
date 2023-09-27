@@ -284,6 +284,16 @@ h1::before {
         height: 5em;
       }
   }
+
+  .text-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skills-section {
+    flex-direction: row;
+  }
+
 }
 
 @media only screen and (max-width: 767px) {
@@ -311,14 +321,22 @@ h1::before {
   .timeline-item-content a::after {
       display: none;
   }
+
+  .skills-section {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .skills-section,
 .skills-section-acco {
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
   padding-bottom: 5vh;
+}
+
+.skills-section-acco {
+  flex-direction: column;
 }
 
 .skill-container {
