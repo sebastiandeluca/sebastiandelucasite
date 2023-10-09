@@ -15,6 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPython, faJs, faReact, faDocker} from '@fortawesome/free-brands-svg-icons';
 import {faFlask, faDatabase, faCubes} from '@fortawesome/free-solid-svg-icons';
 import TimelineItem from './Components/TimelineItem';
+import Project from './Components/project/project';
 
 const openInNewTab = (url) => {
   const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -229,11 +230,15 @@ const Projects = (props) => {
         <div className='Project'>
         <h2 className='text-head' style={{textAlign:'center'}}>My Projects</h2>
         </div>
+        <div style={{display: 'flex', flexDirection: 'column'}}>
         <div className='Projects'>
-      {timelineData.map((data, idx) => (
-        <TimelineItem data={data} key={idx} />
-      ))}
-      <div style={{backgroundColor: "#07A5C3", zIndex: 2, padding: '2em', color: 'white'}}>... and much more to come!</div>
+          <div className='project-holder'>
+          {timelineData.map((data, idx) => (
+            <Project data={data} key={idx} />
+          ))}
+          </div>
+          <div style={{zIndex: 2, padding: '2em', color: 'white'}}>... and much more to come!</div>
+        </div>
       </div>
       
     </div>

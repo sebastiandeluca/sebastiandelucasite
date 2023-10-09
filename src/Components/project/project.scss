@@ -1,0 +1,36 @@
+.project-container {
+    background-color: white;
+    width: 35rem;
+    height: 50vh;
+    margin: 1rem;
+    border-radius: 10px;
+    border: 4px solid #cf392e;
+    color: #CFBF2D;
+}
+
+.tag {
+    color: white;
+    padding-left: .25rem;
+    padding-right: .25rem;
+    margin-bottom: 5vh;
+}
+
+.proj-logo {
+    height: 10rem;
+}
+
+.date {
+    font-weight: 900;
+    margin-top: -3vh;
+}
+
+.desc {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media only screen and (max-width: 767px) {
+    .project-container {
+        height: fit-content;
+    }
+}
