@@ -15,7 +15,6 @@ import frontendpdf from './Components/sebastian deluca resume.pdf'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPython, faJs, faReact, faDocker} from '@fortawesome/free-brands-svg-icons';
 import {faFlask, faDatabase, faCubes, faFileExcel, faFeather} from '@fortawesome/free-solid-svg-icons';
-import TimelineItem from './Components/TimelineItem';
 import Project from './Components/project/project';
 import Contact from './Components/contact/contact';
 
