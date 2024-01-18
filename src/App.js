@@ -293,7 +293,7 @@ const Projects = (props) => {
         <div className='Project'>
         <h2 className='text-head' style={{textAlign:'center', paddingBottom: '.25vh'}}>My Projects</h2>
         </div>
-        <div style={{display: 'flex', flexDirection: 'column'}}>
+        <div style={{display: 'flex', flexDirection: 'column'}} className='hide-gap'>
         <div className='Projects'>
           <div className='project-holder'>
           {timelineData.map((data, idx) => (
