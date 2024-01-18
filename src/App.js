@@ -4,17 +4,21 @@ import './App.scss';
 import github from './img/github.png';
 import linkedin from './img/linkedin.png';
 import email from './img/email.png';
-import seb from './img/seb.jpg';
+import seb from './img/seb.JPEG';
 import appetment_logo from './img/appetment.png';
 import qbnb from './img/QBNBLogo.jpg';
 import prism_logo from './img/Prism.png';
 import comm_logo from './img/comm.png';
 import ntw_logo from './img/ntw_logo.png';
+import mhirj from './img/mhirjlogo.png';
 import frontendpdf from './Components/sebastian deluca resume.pdf'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPython, faJs, faReact, faDocker} from '@fortawesome/free-brands-svg-icons';
-import {faFlask, faDatabase, faCubes} from '@fortawesome/free-solid-svg-icons';
-import TimelineItem from './Components/TimelineItem';
+import {faFlask, faDatabase, faCubes, faFileExcel, faFeather} from '@fortawesome/free-solid-svg-icons';
+import Project from './Components/project/project';
+import Contact from './Components/contact/contact';
+
+var color = "#cf392e";
 
 const openInNewTab = (url) => {
   const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
@@ -47,7 +51,7 @@ const Splash = (props) => {
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"></link>
         <h1 className='name'>SEBASTIAN DELUCA</h1>
         <p className="subtitle">
-          Aspiring Fullstack Web Developer
+          Fullstack Web Developer
         </p>
         <Navbar changePage={props.changePage}></Navbar>
         
@@ -115,7 +119,7 @@ const Projects = (props) => {
       ],
       category: {
         tag: 'Fullstack Web Development',
-        color: '#CFBF2D'
+        color: color
       },
       link: {
         url: 'https://github.com/me50/sebastiandeluca/tree/web50/projects/2020/x/commerce',
@@ -147,7 +151,7 @@ const Projects = (props) => {
       ],
       category: {
         tag: 'Fullstack Web Development',
-        color: '#CFBF2D'
+        color: color
       },
       link: {
         url: 'https://github.com/sebastiandeluca/The-Network',
@@ -179,7 +183,7 @@ const Projects = (props) => {
       ],
       category: {
         tag: 'Fullstack Web Dev.',
-        color: '#CFBF2D'
+        color: color
       },
       link: {
         url: 'https://github.com/sebastiandeluca/Appetment',
@@ -211,13 +215,73 @@ const Projects = (props) => {
       ],
       category: {
         tag: 'Fullstack Web Development',
-        color: '#CFBF2D'
+        color: color
       },
       link: {
         url: 'https://github.com/sebastiandeluca/QBNB',
         text: 'View on GitHub'
       }
     },
+    {
+      title: {title: 'MHIRJ Fullstack Project',
+              logo: mhirj},
+      date: 'Summer 2023 - Fall 2024',
+      desc: 'I developed and maintained a proprietary fullstack application at MHIRJ during my 16-month internship with React, Flask, Python, and SQL.',
+      stack: [
+        { 
+          icon: faPython,
+          name: 'Python'
+        },
+        { 
+          icon: faFlask,
+          name: 'Flask'
+        },
+        { 
+          icon: faReact,
+          name: 'React'
+        },
+        { 
+          icon: faDatabase,
+          name: 'SQLite/MySQL'
+        },
+      ],
+      category: {
+        tag: 'Fullstack Web Development',
+        color: color
+      },
+      link: {
+        url: '',
+        text: 'No Link Available'
+      }
+    },
+    {
+      title: {title: 'MHIRJ Backend Projects',
+              logo: mhirj},
+      date: 'Summer 2023 - Fall 2024',
+      desc: 'I proposed and developed two GUI-based tools to automate monthly report generation by leveraging Python, POLARS, and Tkinter.',
+      stack: [
+        { 
+          icon: faPython,
+          name: 'Python'
+        },
+        { 
+          icon: faFileExcel,
+          name: 'Pandas'
+        },
+        { 
+          icon: faFeather,
+          name: 'Tkinter'
+        },
+      ],
+      category: {
+        tag: 'Backend Development',
+        color: color
+      },
+      link: {
+        url: '',
+        text: 'No Link Available'
+      }
+    }
     
   ]
 
@@ -229,11 +293,15 @@ const Projects = (props) => {
         <div className='Project'>
         <h2 className='text-head' style={{textAlign:'center'}}>My Projects</h2>
         </div>
+        <div style={{display: 'flex', flexDirection: 'column'}}>
         <div className='Projects'>
-      {timelineData.map((data, idx) => (
-        <TimelineItem data={data} key={idx} />
-      ))}
-      <div style={{backgroundColor: "#07A5C3", zIndex: 2, padding: '2em', color: 'white'}}>... and much more to come!</div>
+          <div className='project-holder'>
+          {timelineData.map((data, idx) => (
+            <Project data={data} key={idx} order={idx} />
+          ))}
+          </div>
+          <div style={{zIndex: 2, padding: '2em', color: 'white'}}>... and much more to come!</div>
+        </div>
       </div>
       
     </div>
@@ -260,14 +328,22 @@ const About = (props) => {
           <div className='text-block'>
             <h2 className='text-head'>The Important Stuff</h2>
             <p className='description'>
-              I’m a {age} year old aspiring fullstack developer from Queen’s University. I have a very strong passion for both front and backend development, and my skills come from both experience in school and learning in my spare time.
+              I’m a {age} year old fullstack developer from Queen’s University. I have a very strong passion for both front and backend development, and my skills come from both experience in school and learning in my spare time.
               <br></br><br></br>Some of my most important skills in the workplace are my good communication skills, how easily I can adapt, how quickly I learn, my work ethic, and how well I work both alone and in a team.
             </p>
           </div>
         </div>
         <div className='text-block' style={{ backgroundColor: '#07A5C3', color: 'white', padding: '2em'}}>
           <h2 className='text-head' style={{textAlign:'center'}}>Relevant Experience</h2>
-          <p className='description-head'style={{ color: '#CFBF2D'}}><em>Design Consulting Team Member (Current)</em> <br></br><strong>QMIND</strong></p>
+
+          <p className='description-head'style={{ color: '#CFBF2D'}}><em>Fullstack Developer & Analyst (2023-2024)</em> <br></br><strong>MHIRJ Aviation Group</strong></p>
+          <p className='description'style={{ color: 'white'}}>
+          Utilized tools like React, Flask, Python, PowerBI, and SQL to maintain current and develop new apps for MHI. Beyond this,
+          I also developed tools to automate unit testing for the apps and automate monthly report generation.
+          </p>
+          <p className='Personal-info' style={{ color: '#4F2134', fontWeight: '600'}}>Python, React, Flask, SQL, Excel, Selenium, Cypress, Pandas/POLARS, more</p>
+
+          <p className='description-head'style={{ color: '#CFBF2D'}}><em>Design Consulting Team Member (2023)</em> <br></br><strong>QMIND</strong></p>
           <p className='description'style={{ color: 'white'}}>
           Leveraged tools like Python, OpenCV, and more to develop an ATM Crowd Counter AI with students from Jomo Kenyatta University of Agriculture and Technology.
           </p>
@@ -362,12 +438,14 @@ const About = (props) => {
         </div>
 
         <div className='text-block'>
-          <h2 className='text-head'>Contact Me</h2>
-          <p className='description'>
+          <h2 className='text-head'  style={{textAlign: 'center'}}>Contact Me</h2>
+          <Contact />
+          <p className='description' style={{textAlign: 'center'}}>
             <strong>Phone Number:</strong> +1 6476882306<br></br>
-            <strong>Email:</strong> delucaseb02@gmail.com
+            <strong>Email:</strong> sebdelucatech@gmail.com
           </p>
         </div>
+        
       </div>
       
     )
@@ -424,7 +502,7 @@ function App() {
         <div className="connect">
           <img className="connect-image" src={github} onClick={() => {openInNewTab("https://github.com/sebastiandeluca")}}alt=""></img>
           <img className="connect-image" src={linkedin} onClick={() => {openInNewTab("https://www.linkedin.com/in/sebastian-deluca/")}} alt=""></img>
-          <img className="connect-image" src={email} onClick={() => {navigator.clipboard.writeText('delucaseb02@gmail.com');runPopup();}}alt=""></img>
+          <img className="connect-image" src={email} onClick={() => {navigator.clipboard.writeText('sebdelucatech@gmail.com');runPopup();}}alt=""></img>
         </div>
         
         <TransitionGroup className="Top">
@@ -459,7 +537,7 @@ async function runPopup() {
   var notif = document.querySelector(".notif");
   notif.style.display = "flex";
   await animateFadeIn(notif)
-  notif.style.opacity = 0;
+  await animateFadeOut(notif);
 }
 
 
@@ -469,10 +547,25 @@ function animateFadeIn(notif)
     {opacity:0},
     {opacity:1}
   ], {
-    duration: 3000
+    duration: 1500
   });
   return new Promise(function(resolve, reject) {
     setTimeout(resolve, 2500, "done");
+  });
+}
+
+function animateFadeOut(notif)
+{
+  notif.animate([
+    {opacity:1},
+    {opacity:0}
+  ], {
+    duration: 1500
+  });
+  
+  return new Promise(function(resolve, reject) {
+    setTimeout(resolve, 2500, "done");
+    notif.style.display = 'none';
   });
 }
 

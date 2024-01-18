@@ -149,16 +149,25 @@ h1::before {
     flex-direction: column;
     position: relative;
     margin: 40px 0;
+  width: auto;
 }
 
-.Projects::after {
-      background-color: #CFBF2D;
-      content: '';
-      position: absolute;
-      left: calc(50% - 2px);
-      width: 4px;
-      height: 100%;
-  }
+.project-holder {
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 33%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+// .Projects::after {
+//       background-color: #CFBF2D;
+//       content: '';
+//       position: absolute;
+//       left: calc(50% - 2px);
+//       width: 4px;
+//       height: 100%;
+//   }
 
   .timeline-item {
     display: flex;
