@@ -313,6 +313,10 @@ h1::before {
       align-items: center;
   }
 
+  .hide-gap {
+    margin-top: -7vh;
+  }
+
   .timeline-item-content .tag {
       width: calc(100% - 10px);
       text-align: center;
