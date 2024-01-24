@@ -11,9 +11,10 @@ import prism_logo from './img/Prism.png';
 import comm_logo from './img/comm.png';
 import ntw_logo from './img/ntw_logo.png';
 import mhirj from './img/mhirjlogo.png';
+import ktd from './img/logo.png'
 import frontendpdf from './Components/sebastian deluca resume.pdf'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPython, faJs, faReact, faDocker} from '@fortawesome/free-brands-svg-icons';
+import { faPython, faJs, faReact, faDocker, faUnity} from '@fortawesome/free-brands-svg-icons';
 import {faFlask, faDatabase, faCubes, faFileExcel, faFeather} from '@fortawesome/free-solid-svg-icons';
 import Project from './Components/project/project';
 import Contact from './Components/contact/contact';
@@ -182,11 +183,31 @@ const Projects = (props) => {
         },
       ],
       category: {
-        tag: 'Fullstack Web Dev.',
+        tag: 'Fullstack Web Development',
         color: color
       },
       link: {
         url: 'https://github.com/sebastiandeluca/Appetment',
+        text: 'View on GitHub'
+      }
+    },
+    {
+      title: {title: 'Kingdom TD',
+      logo: ktd},
+      date: 'Spring 2022',
+      desc: "A 2D Tower Defense game built from the ground up in the Unity engine with me and a partner. All assets were created by me on top of the development work I did.",
+      stack: [
+        { 
+          icon: faUnity,
+          name: 'Python'
+        },
+      ],
+      category: {
+        tag: 'Game Development',
+        color: color
+      },
+      link: {
+        url: 'https://github.com/sebastiandeluca/KingdomTD',
         text: 'View on GitHub'
       }
     },
@@ -250,7 +271,7 @@ const Projects = (props) => {
         color: color
       },
       link: {
-        url: '',
+        url: 'https://mhirj.com/en/products-and-services',
         text: 'No Link Available'
       }
     },
@@ -278,7 +299,7 @@ const Projects = (props) => {
         color: color
       },
       link: {
-        url: '',
+        url: 'https://mhirj.com/en/products-and-services',
         text: 'No Link Available'
       }
     }
