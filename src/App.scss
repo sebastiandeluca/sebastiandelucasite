@@ -463,6 +463,15 @@ h1::before {
   padding: 1em;  
 }
 
+
+.shadow-on-hover {
+  transition: all 500ms ease;
+  &:hover {
+    transition: all 500ms ease;
+    filter: drop-shadow(0.35em 0.5vh black);
+  }
+}
+
 @media only screen and (max-width: 600px) {
 
   .text-block {
@@ -557,6 +566,8 @@ h1::before {
   .notif {
     left:35%;
   }
+
+
 
   @keyframes spawnShadow {
     0% {
